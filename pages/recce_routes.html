@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recce Routes</title>
+    <style>
+        /* Header styles */
+        .page-header {
+            text-align: center;
+            padding: 10px;
+            background-color: #385DA6;/* Consistent green */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif; /* Example font */
+            font-size: 25px;
+            z-index: 2; /* Ensure text is above the moving light effect */
+            text-shadow:
+            -1px -1px 0 #000,  
+             1px -1px 0 #000,
+            -1px  1px 0 #97ccf0;
+        }
+
+        .content {
+            padding: 2px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .route-group {
+            margin-bottom: 20px; /* Space between groups */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the group */
+        }
+
+        .route-group h2 {
+            background-color: #02402E;
+            color: #ffffff;
+            padding: 2px;
+            border-radius: 5px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .route-list {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .route-item {
+            background-color: #80cbc4;
+            border: 1px solid #726b6b;
+            border-radius: 5px;
+            padding: 5px; /* Enlarged padding */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+            font-size: 1.6em; /* Enlarged font size */
+            color: #02402E;
+            width: 100px;
+        }
+
+        .route-item:hover {
+            background-color: #aae8f0;
+            transform: scale(1.02);
+        }
+
+        .back-button {
+            padding: 15px 30px; /* Enlarged padding */
+            background-color: #02402E; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            font-size: 1.2em; /* Enlarged font size */
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 40px; /* Increased margin to move down */
+        }
+
+        .back-button:hover {
+            background-color: #005f7f;
+            transform: scale(1.05);
+        }
+
+        /* footer {
+            background-color: #06BF9D; /* Consistent green
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }*/
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <h1>Recce Routes</h1>
+    </header>
+
+    <main class="content">
+        <div class="route-group">
+            <h2>Sector 1</h2>
+            <div class="route-list">
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/1_A_B.pdf')">A</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/1_A_B.pdf')">B</button>
+            </div>
+        </div>
+
+        <div class="route-group">
+            <h2>Sector 2</h2>
+            <div class="route-list">
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/2_A_B.pdf')">A</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/2_A_B.pdf')">B</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/2_C_D.pdf')">C</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/2_C_D.pdf')">D</button>
+                <!-- Add more buttons here as needed -->
+            </div>
+        </div>
+
+        <div class="route-group">
+            <h2>Sector 3</h2>
+            <div class="route-list">
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/3_A_B.pdf')">A</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/3_A_B.pdf')">B</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/3_C_D.pdf')">C</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/3_C_D.pdf')">D</button>
+                <!-- Add more buttons here as needed -->
+            </div>
+        </div>
+
+        <div class="route-group">
+            <h2>Sector 4 and 5</h2>
+            <div class="route-list">
+                <button class="route-item" onclick="showMessage()">A</button>
+                <button class="route-item" onclick="showMessage()">B</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/4_C_D_E.pdf')">D</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/4_C_D_E.pdf')">E</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/4_F_G_H.pdf')">F</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/4_F_G_H.pdf')">G</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/4_F_G_H.pdf')">H</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/4_C_D_E.pdf')">C</button>
+                <!-- Add more buttons here as needed -->
+            </div>
+        </div>
+
+        <div class="route-group">
+            <h2>Sector 6</h2>
+            <div class="route-list">
+                <button class="route-item" onclick="showMessage()">A</button>
+                <button class="route-item" onclick="showMessage()">B</button>
+                <button class="route-item" onclick="showMessage()">C</button>
+                <button class="route-item" onclick="showMessage()">D</button>
+                <!-- Add more buttons here as needed -->
+            </div>
+        </div>
+
+        <div class="route-group">
+            <h2>Sector 7</h2>
+            <div class="route-list">
+                <button class="route-item" onclick="showMessage()">A</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/7_B.pdf')">B</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/7_C_D.pdf')">C</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/7_C_D.pdf')">D</button>
+                <button class="route-item" onclick="showMessage()">E</button>
+                <button class="route-item" onclick="openPDF('../assets/Recce_routes/7_F.pdf')">F</button>
+                
+                <!-- Add buttons for Group 6 -->
+            </div>
+        </div>
+
+        <div class="route-group">
+            <h2>Sector 8</h2>
+            <div class="route-list">
+                <button class="route-item" onclick="showMessage()">A</button>
+                <button class="route-item" onclick="showMessage()">B</button>
+                <button class="route-item" onclick="showMessage()">C</button>
+                <button class="route-item" onclick="showMessage()">D</button>
+                <!-- Add buttons for Group 7 -->
+            </div>
+        </div>
+
+        <button class="back-button" onclick="window.history.back()">Back</button>
+        
+    </main>
+
+    <footer>
+        <!-- <p>&copy; 2024 Central Air OPS Room. Sri Lanka Air Force</p> -->
+    </footer>
+
+    <script>
+        // Function to open PDF files
+        function openPDF(pdfUrl) {
+            window.open(pdfUrl, '_blank'); // Open PDF in a new tab or window
+        }
+
+        // Function to show a message
+        function showMessage() {
+           alert('This file is not uploaded yet.');
+       }
+              
+    </script>
+</body>
+</html>

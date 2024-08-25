@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Routes</title>
+    <style>
+        /* Base styles for the page */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        /* Header styling */
+        .page-header {
+            text-align: center;
+            padding: 10px;
+            background-color: #385DA6;/* Consistent green */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif; /* Example font */
+            font-size: 25px;
+            z-index: 2; /* Ensure text is above the moving light effect */
+            text-shadow:
+            -1px -1px 0 #000,  
+             1px -1px 0 #000,
+            -1px  1px 0 #97ccf0;
+        }
+
+        /* Main content styling */
+        .content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Route list styling */
+        .route-list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* Five columns for each row */
+            gap: 20px; /* Space between buttons */
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* Route item styling */
+        .route-item {
+            background-color: #94E9F2;
+            border: 1px solid #726b6b;
+            border-radius: 5px;
+            padding: 20px; /* Adjusted padding for consistent button size */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+            font-size: 1.5em; /* Adjusted font size for consistent button size */
+            color: #022859;
+            text-align: center; /* Center text within button */
+            height: 100px; /* Fixed height for buttons */
+            display: flex; /* Flexbox for centering text */
+            align-items: center;
+            justify-content: center;
+            z-index: 2; /* Ensure text is above the moving light effect */
+        }
+
+        .route-item:hover {
+            background-color: #ccc;
+            transform: scale(1.02);
+        }
+
+        /* Back button styling */
+        .back-button {
+            padding: 15px 30px;
+            background-color: #008CBA; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 40px;
+        }
+
+        .back-button:hover {
+            background-color: #005f7f;
+            transform: scale(1.05);
+        }
+
+        /* Footer styling */
+        footer {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        /* Responsive styling for smaller screens */
+        @media (max-width: 768px) {
+            .route-list {
+                grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+            }
+
+            .route-item {
+                height: auto; /* Allow buttons to adjust height on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .route-list {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <h1>Fixed Routes</h1>
+    </header>
+
+    <main class="content">
+        <div class="route-list">
+            <button class="route-item" onclick="openPDF('../assets/Fixed_routes/RMA_to_CBY.pdf')">RMA to CBY</button>
+            <button class="route-item" onclick="openPDF('../assets/Fixed_routes/RMA_to_PLY_via_CBY.pdf')">RMA to PLY via CBY</button>
+            <button class="route-item" onclick="openPDF('../assets/Fixed_routes/RMA_to_AMP.pdf')">RMA to AMP</button>
+            <button class="route-item" onclick="openPDF('../assets/Fixed_routes/RMA_to_KGL.pdf')">RMA to KGL</button>
+            <button class="route-item" onclick="openPDF('../assets/Fixed_routes/RMA_to_PLY.pdf')">RMA to PLY</button>
+            <button class="route-item" onclick="openPDF('../assets/Fixed_routes/RMA_to_HIN.pdf')">RMA to HIN</button>
+            <button class="route-item" onclick="openPDF('../assets/Fixed_routes/RMA_to_ANU.pdf')">RMA to ANU</button>
+            <button class="route-item" onclick="openPDF('../assets/Fixed_routes/RMA_to_BCL.pdf')">RMA to BCL</button>
+            <button class="route-item" onclick="openPDF('../assets/Fixed_routes/RMA_to_VNA.pdf')">RMA to VNA</button>
+            <button class="route-item" onclick="openPDF('../assets/Fixed_routes/RMA_to_SGR.pdf')">RMA to SGR</button>
+        </div>
+        <button class="back-button" onclick="window.history.back()">Back</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Central Air OPS Room. Sri Lanka Air Force</p>
+    </footer>
+
+    <script>
+        // Function to open PDF files
+        function openPDF(pdfUrl) {
+            window.open(pdfUrl, '_blank'); // Open PDF in a new tab or window
+        }
+    </script>
+</body>
+</html>

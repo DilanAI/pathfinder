@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Routes</title>
+    <style>
+        /* Base styles for the page */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        /* Header styling */
+        .page-header {
+            text-align: center;
+            padding: 10px;
+            background-color: #385DA6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 25px;
+            z-index: 2;
+            text-shadow:
+            -1px -1px 0 #000,  
+             1px -1px 0 #000,
+            -1px  1px 0 #97ccf0;
+        }
+
+        /* Main content styling */
+        .content {
+            padding: 5px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: calc(100vh - 100px); /* Full viewport height minus header and footer */
+        }
+
+        /* Navigation button styling */
+        .nav-button {
+            background-color: #94E9F2;
+            border: 1px solid #726b6b;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+            font-size: 2em;
+            color: #022859;
+            text-align: center;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            text-decoration: none;
+            width: 80%;
+            max-width: 300px;
+            margin: 10px auto;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 35px;
+        }
+
+        .nav-button:hover {
+            background-color: #ccc;
+            transform: scale(1.02);
+        }
+
+        /* Back button styling */
+        .back-button {
+            padding: 10px 20px; /* Adjusted padding */
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            font-size: 1em; /* Adjusted font size */
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px; /* Adjusted margin */
+            width: 60%; /* Adjusted width */
+            max-width: 200px; /* Limit maximum width */
+            margin: 20px auto; /* Center horizontally and add vertical spacing */
+        }
+
+        .back-button:hover {
+            background-color: #005f7f;
+            transform: scale(1.05);
+        }
+
+        /* Footer styling */
+        footer {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        /* Responsive styling for smaller screens */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            .nav-button, .back-button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <h1>Fixed Routes</h1>
+    </header>
+
+    <main class="content">
+        <a class="nav-button" href="fixed_routes.html">Direct Tracks</a>
+        <a class="nav-button" href="recce_routes.html">Recce Sectors</a>
+        <button class="back-button" onclick="window.history.back()">Back</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Central Air OPS Room. Sri Lanka Air Force</p>
+    </footer>
+</body>
+</html>

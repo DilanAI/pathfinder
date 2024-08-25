@@ -1,0 +1,148 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Style */
+.header {
+    text-align: center;
+    padding: 10px;
+    background-color: #385DA6; /* Fallback color */
+    position: relative;
+    overflow: hidden; /* Ensure the effect doesn't overflow */
+}
+
+
+/* Moving light effect on the entire header */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.6), transparent); /* Light effect */
+    animation: moveLight 6s linear infinite; /* Animation effect */
+    z-index: 1; /* Ensure it is above the background image but below the text */
+}
+
+/* Header text style */
+.header h1 {
+    margin-bottom: 10px;
+    font-size: 70px;
+    color: #f7e488; /* Main text color */
+    font-family: 'Montserrat', sans-serif; /* Example font */
+    position: relative;
+    z-index: 2; /* Ensure text is above the moving light effect */
+    text-shadow:
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #f5e284;
+}
+
+.header p {
+    color: #000000;
+    position: relative;
+    font-family: 'Montserrat', sans-serif; /* Example font */
+    font-size: 30px;
+    z-index: 2; /* Ensure text is above the moving light effect */
+}
+
+@keyframes moveLight {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Main Content Section Style */
+.main-content {
+    margin: 20px auto;
+    max-width: 1200px; /* Adjusted max-width for larger screens */
+    padding: 10px;
+    text-align: left;
+    color: #333;
+}
+
+/* Rectangle Container Style */
+.rectangle-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Default space between rectangles */
+    flex-wrap: wrap; /* Allow rectangles to wrap on smaller screens */
+}
+
+/* Rectangle Style */
+.rectangle {
+    flex: 0 1 calc(33.333% - 50px); /* 3 rectangles per row with gap adjustment */
+    height: 300px; /* Fixed height */
+    background-color: #94E9F2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #022859;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top (left in this case) */
+    align-items: flex-start; /* Align items to the left */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rectangle:hover {
+    background-color: #e3e3e3; /* Change background on hover */
+}
+
+.rectangle h3 {
+    margin-bottom: 20px;
+}
+
+.rectangle p {
+    margin-bottom: 0;
+    
+}
+
+/* Footer Style */
+.footer {
+    text-align: center;
+    padding: 7px;
+    background-color: #f8f9fa;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 768px) {
+    .rectangle-container {
+        gap: 20px; /* Reduced space between rectangles */
+    }
+
+    .rectangle {
+        flex: 0 1 100%; /* Full width for each rectangle */
+        height: auto; /* Allow height to adjust based on content */
+    }
+}
+
+/* Small Screens (Mobile Devices) */
+@media (max-width: 480px) {
+    .header {
+        padding: 20px; /* Reduced padding for smaller screens */
+    }
+
+    .rectangle-container {
+        gap: 10px; /* Further reduced space between rectangles */
+    }
+
+    .rectangle {
+        flex: 0 1 100%; /* Full width for each rectangle */
+        height: auto; /* Allow height to adjust based on content */
+    }
+}

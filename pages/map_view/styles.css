@@ -1,0 +1,128 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.info {
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+.info-table {
+    display: none; /* Hide the table initially */
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it is above other elements */
+    max-height: 400px; /* Optional: limit height to prevent overflow */
+    overflow-y: auto; /* Optional: add scroll if content exceeds max-height */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.distance-control {
+    background: white;
+    border: 2px solid #0078A8; /* Change color to match your theme */
+    border-radius: 5px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.distance-container h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #26e877;
+}
+
+.distance-container p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Styles for the Edit button */
+#edit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0078A8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Space above the button */
+}
+
+#edit-button:hover {
+    background-color: #005f6a;
+}
+
+.big-clear-button {
+    position: absolute;
+    top: 5px; /* Adjust the value to move the button vertically */
+    left: 1165px; /* Adjust the value to move the button horizontally */
+    z-index: 1000; /* Ensure the button appears above other map elements */
+    font-size: 16px; /* Font size */
+    padding: 10px 30px; /* Adjusted padding */
+    background-color: #f44336; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.big-clear-button:hover {
+    background-color: #d32f2f; /* Darken the button on hover */
+}
+.distance-control {
+    position: absolute;
+    top: 10px; /* Adjust the vertical position */
+    right: 10px; /* Adjust the horizontal position */
+    z-index: 1000; /* Ensure the control appears above other map elements */
+    background-color: rgba(9, 30, 183, 0.8); /* Semi-transparent background */
+    padding: 10px 20px; /* Padding around the text */
+    font-size: 16px; /* Font size */
+    color: #ffffff; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow for depth */
+}
+

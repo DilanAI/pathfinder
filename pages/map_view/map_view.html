@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>MapView</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <div id="map" style="height: 600px;"></div>
+    <div id="location-table" class="info-table" style="display:none;">
+        <h3>Police Stations</h3>
+        <table id="locations-table">
+            <thead>
+                <tr>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+        <button id="edit-button">Edit</button>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="data.js"></script>
+    <script src="distance-functions.js"></script>
+    <script src="table-edit.js"></script> <!-- Make sure this path is correct -->
+    <script src="script.js"></script>
+</body>
+</html>
