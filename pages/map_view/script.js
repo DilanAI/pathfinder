@@ -43,7 +43,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 var points = [];
 var markers = [];
-var distanceThreshold = 4; // Example threshold in km
+var distanceThreshold = 3; // Example threshold in km
 
 // Initialize distanceControl
 var distanceControl = L.control({ position: 'topright' });
